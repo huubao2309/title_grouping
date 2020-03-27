@@ -7,6 +7,6 @@ class GroupListBin extends GroupData {
 
   @override
   String toString() {
-    return 'GroupListBin{headerName: $headerName}';
+    return 'GroupListBin {headerName: $headerName}';
   }
 }

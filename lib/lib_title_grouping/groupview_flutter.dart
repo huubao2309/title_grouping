@@ -28,7 +28,7 @@ class GroupView<T extends GroupData> extends StatefulWidget {
 
   @override
   State<StatefulWidget> createState() {
-    return new GroupViewState<T>();
+    return GroupViewState<T>();
   }
 }
 
@@ -38,9 +38,9 @@ class GroupViewState<T extends GroupData> extends State<GroupView<T>> {
 
   @override
   Widget build(BuildContext context) {
-    return new Stack(
+    return Stack(
       children: <Widget>[
-        new GroupListView(
+        GroupListView(
           scrollController: scrollController,
           groupDatas: widget.groupDatas,
           generalItemChild: widget.generalItemChild,
@@ -49,20 +49,20 @@ class GroupViewState<T extends GroupData> extends State<GroupView<T>> {
           itemWidth: widget.itemWidth,
           cacheExtent: widget.cacheExtent,
         ),
-        new GestureDetector(
+        GestureDetector(
           onTap: () {
             double pixels = scrollController.position.pixels;
             int a = pixels ~/ widget.itemHeight;
             for (int i = a; i >= 0; i--) {
               if (widget.groupDatas[i].isHeader) {
                 scrollController.animateTo(i * widget.itemHeight,
-                    duration: new Duration(milliseconds: 200),
+                    duration: Duration(milliseconds: 200),
                     curve: Curves.linear);
                 break;
               }
             }
           },
-          child: new HeaderView(
+          child: HeaderView(
             scrollController: scrollController,
             headChild: widget.headChild,
             groupDatas: widget.groupDatas,
@@ -104,24 +104,24 @@ class GroupListView<T extends GroupData> extends StatefulWidget {
 }
 
 class GroupListViewState<T extends GroupData> extends State<GroupListView<T>> {
-  ScrollPhysics scrollPhysics = new ClampingScrollPhysics();
+  ScrollPhysics scrollPhysics = ClampingScrollPhysics();
 
   @override
   Widget build(BuildContext context) {
-    return new ListView.builder(
+    return ListView.builder(
       physics: scrollPhysics,
       cacheExtent: widget.cacheExtent,
       controller: widget.scrollController,
       itemCount: widget.groupDatas.length,
       itemBuilder: (context, index) {
         if (widget.groupDatas[index].isHeader) {
-          return new Container(
+          return Container(
             width: widget.itemWidth,
             height: widget.itemHeight,
             child: widget.headChild(widget.groupDatas[index]),
           );
         } else {
-          return new Container(
+          return Container(
             width: widget.itemWidth,
             height: widget.itemHeight,
             child: widget.generalItemChild(widget.groupDatas[index]),
@@ -149,7 +149,7 @@ class HeaderView<T extends GroupData> extends StatefulWidget {
 
   @override
   State<StatefulWidget> createState() {
-    return new HeaderViewState<T>();
+    return HeaderViewState<T>();
   }
 }
 
@@ -212,7 +212,7 @@ class HeaderViewState<T extends GroupData> extends State<HeaderView<T>> {
 
   @override
   Widget build(BuildContext context) {
-    return new Container(
+    return Container(
       transform: Matrix4.translationValues(0.0, headerOffset, 0.0),
       width: widget.itemWidth,
       height: widget.itemHeight,

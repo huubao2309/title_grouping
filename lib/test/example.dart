@@ -6,93 +6,93 @@ import 'grouplistbin.dart';
 class GroupViewDemo extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
-    List<GroupListBin> groupDatas = new List();
+    List<GroupListBin> groupDatas = List();
     GroupListBin groupData;
 
-    groupData = new GroupListBin("A");
+    groupData = GroupListBin("A");
     groupData.isHeader = true;
     groupDatas.add(groupData);
 
-    groupData = new GroupListBin("Apple");
+    groupData = GroupListBin("Apple");
     groupDatas.add(groupData);
 
-    groupData = new GroupListBin("Air");
+    groupData = GroupListBin("Air");
     groupDatas.add(groupData);
 
-    groupData = new GroupListBin("Audition");
+    groupData = GroupListBin("Audition");
     groupDatas.add(groupData);
 
-    groupData = new GroupListBin("Address");
+    groupData = GroupListBin("Address");
     groupDatas.add(groupData);
 
-    groupData = new GroupListBin("Administrator");
+    groupData = GroupListBin("Administrator");
     groupDatas.add(groupData);
 
-    groupData = new GroupListBin("Adopt");
+    groupData = GroupListBin("Adopt");
     groupDatas.add(groupData);
 
-    groupData = new GroupListBin("B");
+    groupData = GroupListBin("B");
     groupData.isHeader = true;
     groupDatas.add(groupData);
 
-    groupData = new GroupListBin("Black");
+    groupData = GroupListBin("Black");
     groupDatas.add(groupData);
 
-    groupData = new GroupListBin("Bad");
+    groupData = GroupListBin("Bad");
     groupDatas.add(groupData);
 
-    groupData = new GroupListBin("Bridge");
+    groupData = GroupListBin("Bridge");
     groupDatas.add(groupData);
 
-    groupData = new GroupListBin("Bag");
+    groupData = GroupListBin("Bag");
     groupDatas.add(groupData);
 
-    groupData = new GroupListBin("Ban");
+    groupData = GroupListBin("Ban");
     groupDatas.add(groupData);
 
-    groupData = new GroupListBin("Bar");
+    groupData = GroupListBin("Bar");
     groupDatas.add(groupData);
 
-    groupData = new GroupListBin("Back");
+    groupData = GroupListBin("Back");
     groupDatas.add(groupData);
 
-    groupData = new GroupListBin("C");
+    groupData = GroupListBin("C");
     groupData.isHeader = true;
     groupDatas.add(groupData);
 
-    groupData = new GroupListBin("Cabinet");
+    groupData = GroupListBin("Cabinet");
     groupDatas.add(groupData);
 
-    groupData = new GroupListBin("Call");
+    groupData = GroupListBin("Call");
     groupDatas.add(groupData);
 
-    groupData = new GroupListBin("Cable");
+    groupData = GroupListBin("Cable");
     groupDatas.add(groupData);
 
-    groupData = new GroupListBin("Calm");
+    groupData = GroupListBin("Calm");
     groupDatas.add(groupData);
 
-    groupData = new GroupListBin("Camp");
+    groupData = GroupListBin("Camp");
     groupDatas.add(groupData);
 
-    groupData = new GroupListBin("Camera");
+    groupData = GroupListBin("Camera");
     groupDatas.add(groupData);
 
-    groupData = new GroupListBin("Candy");
+    groupData = GroupListBin("Candy");
     groupDatas.add(groupData);
 
-    groupData = new GroupListBin("Cap");
+    groupData = GroupListBin("Cap");
     groupDatas.add(groupData);
 
-    groupData = new GroupListBin("Captain");
+    groupData = GroupListBin("Captain");
     groupDatas.add(groupData);
 
-    groupData = new GroupListBin("Capture");
+    groupData = GroupListBin("Capture");
     groupDatas.add(groupData);
 
-    groupData = new GroupListBin("Car");
+    groupData = GroupListBin("Car");
     groupDatas.add(groupData);
-    return new GroupViewState(groupDatas);
+    return GroupViewState(groupDatas);
   }
 }
 
@@ -105,30 +105,30 @@ class GroupViewState extends State<GroupViewDemo> {
 
   @override
   Widget build(BuildContext context) {
-    return new Scaffold(
-      appBar: new AppBar(
-        title: new Text("Demo Title Grouping"),
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Demo Title Grouping"),
       ),
       body: GroupListView(
         groupDatas: groupDatas,
         generalItemChild: (GroupListBin bin) {
-          return new Container(
+          return Container(
             alignment: Alignment.centerLeft,
             margin: EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-            child: new Text(
+            child: Text(
               bin.headerName,
-              style: new TextStyle(fontSize: 18.0, color: Colors.black),
+              style: TextStyle(fontSize: 18.0, color: Colors.black),
             ),
           );
         },
         headChild: (GroupListBin bin) {
-          return new Container(
+          return Container(
             color: Colors.blueAccent,
             alignment: Alignment.centerLeft,
             padding: EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-            child: new Text(
+            child: Text(
               bin.headerName,
-              style: new TextStyle(fontSize: 20.0, color: Colors.white),
+              style: TextStyle(fontSize: 20.0, color: Colors.white),
             ),
           );
         },
